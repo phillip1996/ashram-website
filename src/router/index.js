@@ -20,7 +20,65 @@ const routes = [
     // Lazy Loading the new Contact page
     component: () => import('../views/Contact.vue')
   },
-  // You can add more routes here in the future
+  
+  // =============================================
+  // PHILOSOPHY PAGES - One for each hero slide
+  // =============================================
+  { 
+    path: '/philosophy/advaita', 
+    name: 'AdvaitaPhilosophy',
+    component: () => import('../views/philosophy/Advaita.vue')
+  },
+  { 
+    path: '/philosophy/yoga', 
+    name: 'YogaPhilosophy',
+    component: () => import('../views/philosophy/Yoga.vue')
+  },
+  { 
+    path: '/philosophy/ecology', 
+    name: 'EcologyPhilosophy',
+    component: () => import('../views/philosophy/Ecology.vue')
+  },
+  { 
+    path: '/philosophy/functional-medicine', 
+    name: 'FunctionalMedicinePhilosophy',
+    component: () => import('../views/philosophy/FunctionalMedicine.vue')
+  },
+  { 
+    path: '/philosophy/consultancy', 
+    name: 'ConsultancyPhilosophy',
+    component: () => import('../views/philosophy/Consultancy.vue')
+  },
+  
+  // =============================================
+  // SUPPORT PAGES - One for each hero slide
+  // =============================================
+  { 
+    path: '/support/meditation-programs', 
+    name: 'MeditationPrograms',
+    component: () => import('../views/support/MeditationPrograms.vue')
+  },
+  { 
+    path: '/support/satsang', 
+    name: 'Satsang',
+    component: () => import('../views/support/Satsang.vue')
+  },
+  { 
+    path: '/support/conservation', 
+    name: 'Conservation',
+    component: () => import('../views/support/Conservation.vue')
+  },
+  { 
+    path: '/support/wellness', 
+    name: 'Wellness',
+    component: () => import('../views/support/Wellness.vue')
+  },
+  { 
+    path: '/support/therapy', 
+    name: 'Therapy',
+    component: () => import('../views/support/Therapy.vue')
+  },
+  
 ]
 
 const router = createRouter({

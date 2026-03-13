@@ -28,7 +28,7 @@
             <source :src="slide.video" type="video/mp4" />
           </video>
 
-          <!-- Dark Overlay (lighter for readability but brighter hero) -->
+          <!-- Dark Overlay -->
           <div class="absolute inset-0 bg-black/30 z-10"></div>
           <div class="absolute inset-0 bg-gradient-to-b from-black/40 via-transparent to-black/50 z-10"></div>
 
@@ -47,13 +47,21 @@
             </p>
 
             <div class="flex flex-col sm:flex-row items-center justify-center gap-6">
-              <button class="w-full sm:w-auto px-10 py-4 bg-[#E1B137] text-white font-bold uppercase text-[11px] tracking-[0.2em] hover:bg-white hover:text-black transition-all duration-300">
-                Our Philosophy
-              </button>
+              <!-- Philosophy Button - unique per slide -->
+              <router-link 
+                :to="slide.philosophyLink"
+                class="w-full sm:w-auto px-10 py-4 bg-[#E1B137] text-white font-bold uppercase text-[11px] tracking-[0.2em] hover:bg-white hover:text-black transition-all duration-300 text-center"
+              >
+                {{ slide.philosophyText }}
+              </router-link>
 
-              <button class="w-full sm:w-auto px-10 py-4 border border-white text-white font-bold uppercase text-[11px] tracking-[0.2em] hover:bg-white hover:text-black transition-all duration-300">
-                Support Nature
-              </button>
+              <!-- Support Button - unique per slide -->
+              <router-link 
+                :to="slide.supportLink"
+                class="w-full sm:w-auto px-10 py-4 border border-white text-white font-bold uppercase text-[11px] tracking-[0.2em] hover:bg-white hover:text-black transition-all duration-300 text-center"
+              >
+                {{ slide.supportText }}
+              </router-link>
             </div>
           </div>
         </div>
@@ -86,31 +94,52 @@ const slides = [
     category: 'Advaita & Self-Discovery',
     title: 'Non-Dualism / Advaita',
     subtitle: 'Resolving the mysteries of life through the philosophical framework of Advaita and contemplation.',
-    video: advaitaVideo
+    video: advaitaVideo,
+    // Unique buttons for this slide
+    philosophyText: 'Advaita Philosophy ',
+    philosophyLink: '/philosophy/advaita',
+    supportText: 'Support Meditation',
+    supportLink: '/support/meditation-programs'
   },
   {
     category: 'Yoga & Awareness',
     title: 'Satsangs, Meditation & Consciousness',
     subtitle: 'Practices focused on awareness, discipline and inner stillness.',
-    video: yogaVideo
+    video: yogaVideo,
+    philosophyText: 'Yoga Philosophy',
+    philosophyLink: '/philosophy/yoga',
+    supportText: 'Join Satsang',
+    supportLink: '/support/satsang'
   },
   {
     category: 'Wildlife Conservation',
     title: 'Environmental Sustainability',
     subtitle: 'Guarding nature and climate for future generations.',
-    video: wildLifeConservation
+    video: wildLifeConservation,
+    philosophyText: 'Eco-Philosophy',
+    philosophyLink: '/philosophy/ecology',
+    supportText: 'Support Conservation',
+    supportLink: '/support/conservation'
   },
   {
     category: 'Functional Medicine',
     title: 'Root-Cause Healing',
     subtitle: 'Integrating science-based medicine with holistic wellness.',
-    video: functionalMedicine
+    video: functionalMedicine,
+    philosophyText: 'Healing Philosophy',
+    philosophyLink: '/philosophy/functional-medicine',
+    supportText: 'Support Wellness',
+    supportLink: '/support/wellness'
   },
   {
     category: 'Consultancy & Therapy',
     title: 'Professional Guidance',
     subtitle: 'Empathy-driven consultancy for growth and clarity.',
-    video: consultancy
+    video: consultancy,
+    philosophyText: 'Guidance Philosophy',
+    philosophyLink: '/philosophy/consultancy',
+    supportText: 'Book Session',
+    supportLink: '/support/therapy'
   }
 ]
 </script>
@@ -128,7 +157,7 @@ const slides = [
   height: 100%;
   object-fit: cover;
   animation: slowZoom 20s ease-in-out infinite alternate;
-  filter: brightness(1); /* brighter than before */
+  filter: brightness(1);
   z-index: 0;
 }
 
