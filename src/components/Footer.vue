@@ -1,149 +1,134 @@
 <template>
-  <footer class="bg-white">
-    <div class="text-gray-800 border-t border-gray-200">
-      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-20">
-        <div class="grid grid-cols-1 lg:grid-cols-5 gap-12">
+  <footer class="font-montserrat">
 
-          <div class="lg:col-span-2">
-            <div class="mb-8">
-              <router-link to="/" class="inline-block">
-                <img 
-                  src="../assets/img/logo.png" 
-                  alt="The Lekki Ashram" 
-                  class="h-16 w-auto object-contain mb-2" 
-                />
-              </router-link>
-            </div>
-            
-            <p class="text-gray-600 mb-8 leading-relaxed max-w-lg font-light">
-              An apolitical civil society group dedicated to resolving the mysteries of life 
-              through nature conservation, Advaita philosophy, and human evolution.
-            </p>
+    <div class="bg-[#1e3540] text-white">
+      <div class="max-w-6xl mx-auto px-6 md:px-12 py-14 grid grid-cols-1 md:grid-cols-4 gap-10">
 
-            <div class="flex flex-wrap gap-3 mb-8">
-              <div class="flex items-center gap-2 px-4 py-2 bg-white shadow-sm rounded-lg border border-gray-100">
-                <i class="fa-solid fa-leaf text-emerald-600"></i>
-                <span class="text-[11px] font-bold uppercase tracking-wider text-gray-700">Apolitical Group</span>
-              </div>
-              <div class="flex items-center gap-2 px-4 py-2 bg-white shadow-sm rounded-lg border border-gray-100">
-                <i class="fa-solid fa-earth-africa text-blue-600"></i>
-                <span class="text-[11px] font-bold uppercase tracking-wider text-gray-700">Nature First</span>
-              </div>
-              <div class="flex items-center gap-2 px-4 py-2 bg-white shadow-sm rounded-lg border border-gray-100">
-                <i class="fa-solid fa-om text-orange-500"></i>
-                <span class="text-[11px] font-bold uppercase tracking-wider text-gray-700">Advaita Framework</span>
-              </div>
-            </div>
-          </div>
-
-          <div>
-            <h3 class="font-bold text-gray-900 text-xs uppercase tracking-[0.2em] mb-8">Philosophy</h3>
-            <ul class="space-y-4">
-              <li v-for="link in philosophyLinks" :key="link.name">
-                <a href="#" class="group flex items-center gap-2 text-gray-500 hover:text-[#E1B137] transition-all duration-300">
-                  <span class="h-px w-0 bg-[#E1B137] transition-all duration-300 group-hover:w-3"></span>
-                  <span class="font-medium text-[15px]">{{ link.name }}</span>
-                </a>
-              </li>
-            </ul>
-          </div>
-
-          <div>
-            <h3 class="font-bold text-gray-900 text-xs uppercase tracking-[0.2em] mb-8">Affiliations</h3>
-            <ul class="space-y-4">
-              <li v-for="org in affiliations" :key="org">
-                <a href="#" class="group flex items-center gap-2 text-gray-500 hover:text-[#E1B137] transition-all duration-300">
-                  <span class="h-px w-0 bg-[#E1B137] transition-all duration-300 group-hover:w-3"></span>
-                  <span class="font-medium text-[15px]">{{ org }}</span>
-                  <span class="text-xs opacity-0 group-hover:opacity-100 transition-all -translate-x-2 group-hover:translate-x-0 ml-auto">→</span>
-                </a>
-              </li>
-            </ul>
-          </div>
-
-          <div>
-            <h3 class="font-bold text-gray-900 text-xs uppercase tracking-[0.2em] mb-8">Engagement</h3>
-            <div class="space-y-3 mb-6">
-              <a href="mailto:info@lekkiamshram.com" class="block p-4 rounded-xl bg-gray-50 border border-transparent hover:border-[#E1B137]/20 hover:bg-white hover:shadow-xl hover:shadow-[#E1B137]/5 transition-all group">
-                <p class="text-[10px] font-bold text-[#E1B137] uppercase mb-1">Inquiries</p>
-                <p class="text-gray-900 font-bold text-sm">info@lekkiamshram.com</p>
-              </a>
-              <a href="#" class="block p-4 rounded-xl bg-gray-50 border border-transparent hover:border-slate-200 hover:bg-white hover:shadow-xl hover:shadow-slate-500/5 transition-all group">
-                <p class="text-[10px] font-bold text-slate-500 uppercase mb-1">Location</p>
-                <p class="text-gray-900 font-bold text-sm">Lekki, Lagos, Nigeria</p>
-              </a>
-            </div>
-            
-            <button class="flex items-center justify-center w-full py-4 bg-slate-900 text-white text-xs font-bold uppercase tracking-widest rounded-xl hover:bg-[#E1B137] transition-all shadow-lg active:scale-[0.98]">
-              Join Community
-            </button>
-          </div>
-        </div>
-
-        <div class="mt-20 pt-12 border-t border-gray-100 grid grid-cols-1 lg:grid-cols-3 gap-12">
-          <div class="lg:col-span-2">
-            <h4 class="font-serif text-xl text-gray-900 mb-2 italic">Subscribe to Contemplations</h4>
-            <p class="text-gray-500 mb-6 text-sm">Join our newsletter for weekly insights on consciousness and conservation.</p>
-            <form class="flex flex-col sm:flex-row gap-3">
-              <input 
-                type="email" 
-                placeholder="Your email address"
-                class="flex-1 px-5 py-3 bg-white border border-gray-200 rounded-lg focus:outline-none focus:ring-2 focus:ring-[#E1B137] focus:border-transparent shadow-sm"
-              />
-              <button class="px-8 py-3 bg-slate-900 text-white font-bold text-xs uppercase tracking-widest rounded-lg hover:shadow-lg hover:bg-[#E1B137] transition-all">
-                Subscribe
-              </button>
-            </form>
-          </div>
-
-          <div>
-            <h4 class="font-bold text-gray-900 text-xs uppercase tracking-widest mb-6">Connect With Us</h4>
-            <div class="flex gap-4">
-              <a v-for="social in socialLinks" :key="social.icon" href="#" 
-                 class="w-12 h-12 rounded-xl bg-gray-50 flex items-center justify-center hover:bg-white hover:scale-110 transition-all border border-gray-100 shadow-sm group">
-                <i :class="[social.icon, 'text-gray-400 group-hover:text-[#E1B137] text-lg']"></i>
-              </a>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-
-    <div class="bg-slate-950 text-white py-8">
-      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div class="flex flex-col md:flex-row justify-between items-center gap-4">
-          <p class="text-[11px] uppercase tracking-[0.3em] opacity-60 font-light text-center md:text-left">
-            © 2026 THE LEKKI ASHRAM. BEYOND RELIGION. BEYOND POLITICS.
+        <!-- Brand -->
+        <div class="md:col-span-2 space-y-5">
+          <img src="../assets/img/logo.png" alt="The Lekki Ashram" class="h-10 w-auto brightness-0 invert" />
+          <p class="text-white/50 text-sm leading-relaxed max-w-sm">
+            A sanctuary for higher living — founded on the principles of Advaita, ecological stewardship, and human evolution.
           </p>
-          <div class="flex items-center gap-8 text-[10px] uppercase tracking-[0.2em] opacity-60">
-            <a href="#" class="hover:text-[#E1B137] transition-colors">Privacy Policy</a>
-            <a href="#" class="hover:text-[#E1B137] transition-colors">Terms of Service</a>
+          <div class="flex gap-3 pt-1">
+            <a href="https://x.com/AshramLekki" class="footer-social"><i class="fa-brands fa-x-twitter"></i></a>
+            <a href="https://www.facebook.com/share/1CkSnfWiCn/" class="footer-social"><i class="fa-brands fa-facebook"></i></a>
+            <a href="#" class="footer-social"><i class="fa-brands fa-instagram"></i></a>
+            <a href="#" class="footer-social"><i class="fa-brands fa-linkedin-in"></i></a>
           </div>
+        </div>
+
+        <!-- Quick Links -->
+        <div class="space-y-4">
+          <h4 class="text-[#E1B137] text-[10px] font-bold uppercase tracking-[0.3em]">Quick Links</h4>
+          <ul class="space-y-3 text-sm text-white/50">
+            <li><router-link to="/"        class="hover:text-[#E1B137] transition-colors">Home</router-link></li>
+            <li><router-link to="/about"   class="hover:text-[#E1B137] transition-colors">About</router-link></li>
+            <li><router-link to="/blog"    class="hover:text-[#E1B137] transition-colors">Insights</router-link></li>
+            <li><router-link to="/news"    class="hover:text-[#E1B137] transition-colors">News</router-link></li>
+            <li><router-link to="/contact" class="hover:text-[#E1B137] transition-colors">Contact</router-link></li>
+          </ul>
+        </div>
+
+        <!-- Contact -->
+        <div class="space-y-4">
+  <h4 class="text-[#E1B137] text-[10px] font-bold uppercase tracking-[0.3em]">Contact</h4>
+
+  <ul class="space-y-3 text-sm text-white/50">
+
+    <li class="flex items-start gap-2">
+      <i class="fa-solid fa-location-dot text-[#E1B137] mt-0.5 shrink-0"></i>
+      <span>
+        07, Kayode I Micah Street, Ogombo off Abraham Adesanya Rd, Lekki, Lagos.
+      </span>
+    </li>
+
+    <li class="flex items-center gap-2">
+      <i class="fa-solid fa-phone text-[#E1B137] shrink-0"></i>
+      <span>+234 906 925 8377</span>
+    </li>
+
+    <li class="flex items-center gap-2">
+      <i class="fa-solid fa-envelope text-[#E1B137] shrink-0"></i>
+      <span>info@lekkiashram.com</span>
+    </li>
+
+  </ul>
+</div>
+
+      </div>
+
+      <!-- Subscribe -->
+      <div class="border-t border-white/10">
+        <div class="max-w-6xl mx-auto px-6 md:px-12 py-10 flex flex-col md:flex-row md:items-center justify-between gap-6">
+          <div>
+            <p class="text-white font-medium text-sm mb-1">Subscribe to Contemplations</p>
+            <p class="text-white/40 text-xs">Weekly insights on consciousness, ecology and the path within.</p>
+          </div>
+          <form class="flex gap-3 w-full md:w-auto" @submit.prevent="handleSubscribe">
+            <input
+              v-model="email"
+              type="email"
+              placeholder="Your email address"
+              class="flex-1 md:w-64 px-4 py-3 bg-white/5 border border-white/15 text-white text-sm placeholder:text-white/30 focus:outline-none focus:border-[#E1B137] transition-colors"
+            />
+            <button
+              type="submit"
+              class="px-6 py-3 bg-[#E1B137] text-white text-[11px] font-bold uppercase tracking-[0.2em] hover:bg-[#d4a52e] transition-all shrink-0 active:scale-95"
+            >
+              Subscribe
+            </button>
+          </form>
         </div>
       </div>
     </div>
+
+    <!-- Bottom bar -->
+    <div class="bg-slate-950 text-white py-5">
+      <div class="max-w-6xl mx-auto px-6 md:px-12 flex flex-col md:flex-row items-center justify-between gap-3">
+        <p class="text-white/30 text-xs">© 2026 The Lekki Ashram. All rights reserved.</p>
+        <div class="flex gap-5 text-white/30 text-xs">
+          <a href="#" class="hover:text-[#E1B137] transition-colors">Privacy Policy</a>
+          <a href="#" class="hover:text-[#E1B137] transition-colors">Terms of Use</a>
+        </div>
+      </div>
+    </div>
+
   </footer>
 </template>
 
 <script setup>
-const philosophyLinks = [
-  { name: 'Our Vision' },
-  { name: 'Advaita Study' },
-  { name: 'Functional Medicine' },
-  { name: 'Global Harmony' }
-];
+import { ref } from 'vue'
 
-const affiliations = [
-  'WWF International',
-  'UNEP Observer',
-  'NCF Nigeria',
-  'Vedanta Society'
-];
+const email = ref('')
 
-const socialLinks = [
-  { icon: 'fa-brands fa-facebook-f' },
-  { icon: 'fa-brands fa-instagram' },
-  { icon: 'fa-brands fa-x-twitter' },
-  { icon: 'fa-brands fa-youtube' }
-];
+const handleSubscribe = () => {
+  if (!email.value) return
+  // Wire up to your newsletter service here
+  console.log('Subscribed:', email.value)
+  email.value = ''
+}
 </script>
+
+<style scoped>
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;600;700;800&display=swap');
+
+.font-montserrat { font-family: 'Montserrat', sans-serif; }
+
+.footer-social {
+  width: 36px;
+  height: 36px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  color: rgba(255, 255, 255, 0.4);
+  transition: all 0.3s ease;
+}
+.footer-social:hover {
+  background: #E1B137;
+  border-color: #E1B137;
+  color: white;
+  transform: translateY(-2px);
+}
+</style>
